@@ -1,7 +1,6 @@
 package com.example.demo;
 
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -13,7 +12,7 @@ import java.io.InputStreamReader;
 public class Util {
   public static void initDbSchema(JdbcTemplate jdbcTemplate) throws IOException {
     InputStream resource = new ClassPathResource(
-      "create_toc_schema.sql").getInputStream();
+      "create_db.sql").getInputStream();
     try (BufferedReader reader = new BufferedReader(
       new InputStreamReader(resource))) {
       String line;
